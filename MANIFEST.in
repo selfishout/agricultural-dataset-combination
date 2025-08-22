@@ -1,0 +1,67 @@
+# Include README and documentation
+include README.md
+include CHANGELOG.md
+include CONTRIBUTING.md
+include LICENSE
+include requirements.txt
+include requirements-dev.txt
+
+# Include configuration files
+include config/*.yaml
+include config/*.yml
+include config/*.json
+
+# Include scripts
+include scripts/*.py
+
+# Include test files
+include tests/*.py
+recursive-include tests *.py
+
+# Include notebooks
+include notebooks/*.ipynb
+recursive-include notebooks *.ipynb
+
+# Include sample project
+recursive-include sample_segmentation_project *.py
+recursive-include sample_segmentation_project *.md
+recursive-include sample_segmentation_project *.txt
+
+# Include source code
+recursive-include src *.py
+
+# Include documentation
+recursive-include docs *.md
+recursive-include docs *.rst
+recursive-include docs *.txt
+
+# Exclude unnecessary files
+exclude *.pyc
+exclude *.pyo
+exclude *.pyd
+exclude __pycache__
+exclude *.so
+exclude .DS_Store
+exclude .git*
+exclude .vscode
+exclude .idea
+exclude *.log
+exclude *.tmp
+exclude *.temp
+exclude venv/
+exclude env/
+exclude .venv/
+exclude .env/
+
+# Exclude dataset files (as per user request)
+exclude /Volumes/
+exclude *.zip
+exclude *.tar.gz
+exclude *.rar
+exclude *.7z
+exclude data/
+exclude logs/
+exclude checkpoints/
+exclude results/
+exclude temp/
+exclude tmp/

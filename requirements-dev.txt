@@ -1,0 +1,59 @@
+# Development and Testing Dependencies
+# Install with: pip install -r requirements-dev.txt
+
+# Core development dependencies
+-r requirements.txt
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+pytest-mock>=3.10.0
+pytest-xdist>=3.0.0
+pytest-html>=3.1.0
+pytest-benchmark>=4.0.0
+
+# Code quality and formatting
+flake8>=6.0.0
+black>=23.0.0
+isort>=5.12.0
+mypy>=1.0.0
+bandit>=1.7.0
+safety>=2.3.0
+
+# Documentation
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+myst-parser>=1.0.0
+sphinx-autodoc-typehints>=1.23.0
+
+# Development tools
+pre-commit>=3.0.0
+tox>=4.0.0
+coverage>=7.0.0
+codecov>=2.1.0
+
+# Jupyter and notebooks
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipykernel>=6.0.0
+nbformat>=5.7.0
+
+# Additional utilities
+tqdm>=4.65.0
+rich>=13.0.0
+click>=8.1.0
+typer>=0.9.0
+
+# Performance profiling
+memory-profiler>=0.60.0
+line-profiler>=4.0.0
+py-spy>=0.3.0
+
+# Type checking
+types-Pillow>=9.5.0
+types-PyYAML>=6.0.0
+types-requests>=2.28.0
+
+# Optional: GPU development (uncomment if needed)
+# cupy-cuda11x>=11.0.0  # For CUDA 11.x
+# cupy-cuda12x>=12.0.0  # For CUDA 12.x

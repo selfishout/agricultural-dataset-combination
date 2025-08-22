@@ -1,0 +1,142 @@
+# Dataset Combination Configuration
+# This file contains all configuration parameters for combining agricultural datasets
+
+# Dataset paths
+datasets:
+  phenobench:
+    source_path: "/Volumes/Rapid/Agriculture Dataset/PhenoBench"
+    name: "PhenoBench"
+    type: "semantic_segmentation"
+    image_size: [1024, 1024]
+    supported_formats: ["png", "jpg", "jpeg"]
+    
+  tinydataset:
+    source_path: "/Volumes/Rapid/Agriculture Dataset/tinydataset"
+    name: "TinyDataset"
+    type: "weed_detection"
+    image_size: [512, 512]  # Will be resized
+    supported_formats: ["jpg", "jpeg"]
+    
+  weed_augmented:
+    source_path: "/Volumes/Rapid/Agriculture Dataset/weed_augmented"
+    name: "WeedAugmented"
+    type: "weed_detection"
+    image_size: [512, 512]  # Will be resized
+    supported_formats: ["jpg", "jpeg"]
+    
+  vineyard:
+    source_path: "/Volumes/Rapid/Agriculture Dataset/Vineyard Canopy Images during Early Growth Stage"
+    name: "VineyardCanopy"
+    type: "growth_monitoring"
+    image_size: [512, 512]  # Will be resized
+    supported_formats: ["jpg", "jpeg", "png"]
+    
+  capsicum:
+    source_path: "/Volumes/Rapid/Agriculture Dataset/Synthetic and Empirical Capsicum Annuum Image Dataset_1_all"
+    name: "CapsicumAnnuum"
+    type: "plant_monitoring"
+    image_size: [512, 512]  # Will be resized
+    supported_formats: ["jpg", "jpeg", "png"]
+
+# Output configuration
+output:
+  target_image_size: [512, 512]  # Unified image size for all datasets
+  output_format: "png"
+  compression_quality: 95
+  
+# Processing configuration
+processing:
+  # Image preprocessing
+  normalization: true
+  augmentation: true
+  resize_method: "bilinear"  # bilinear, nearest, bicubic
+  
+  # Data augmentation parameters
+  augmentation_params:
+    horizontal_flip: true
+    vertical_flip: false
+    rotation_range: [-15, 15]
+    brightness_range: [0.8, 1.2]
+    contrast_range: [0.8, 1.2]
+    saturation_range: [0.8, 1.2]
+    hue_range: [-0.1, 0.1]
+    
+  # Quality control
+  min_image_size: [256, 256]
+  max_image_size: [2048, 2048]
+  min_annotation_quality: 0.7
+  
+# Annotation mapping
+annotation_mapping:
+  # Unified class labels for all datasets
+  classes:
+    0: "background"
+    1: "crop"
+    2: "weed"
+    3: "partial_crop"
+    4: "soil"
+    5: "other"
+    
+  # Dataset-specific mappings
+  phenobench:
+    0: 0  # background -> background
+    1: 1  # crop -> crop
+    2: 2  # weed -> weed
+    3: 3  # partial-crop -> partial_crop
+    4: 3  # partial-crop -> partial_crop
+    
+  tinydataset:
+    # Will be mapped based on label analysis
+    default: 2  # weed
+    
+  weed_augmented:
+    # Will be mapped based on mask analysis
+    default: 2  # weed
+    
+  vineyard:
+    # Will be mapped based on growth stage analysis
+    default: 1  # crop
+    
+  capsicum:
+    # Will be mapped based on plant analysis
+    default: 1  # crop
+
+# Data splitting
+splits:
+  train: 0.7
+  validation: 0.2
+  test: 0.1
+  
+# Storage configuration
+storage:
+  output_dir: "/Volumes/Rapid/Agriculture Dataset/Combined_datasets"
+  intermediate_dir: "data/intermediate"
+  backup_original: true
+  compression: true
+  
+# Logging configuration
+logging:
+  level: "INFO"
+  file: "logs/dataset_combination.log"
+  console: true
+  
+# Performance configuration
+performance:
+  num_workers: 4
+  batch_size: 32
+  memory_limit: "8GB"
+  use_gpu: false
+  
+# Validation configuration
+validation:
+  check_image_integrity: true
+  check_annotation_consistency: true
+  generate_statistics: true
+  create_visualization: true
+  
+# Metadata configuration
+metadata:
+  include_dataset_info: true
+  include_processing_history: true
+  include_quality_metrics: true
+  export_format: ["json", "csv"]
