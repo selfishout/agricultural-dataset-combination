@@ -23,18 +23,22 @@ This project successfully combines multiple high-quality agricultural datasets i
 
 | Metric | Value |
 |--------|-------|
-| **Total Images** | 62,763 |
-| **Training Split** | 43,934 (70%) |
-| **Validation Split** | 12,552 (20%) |
-| **Test Split** | 6,277 (10%) |
+| **Total Images** | 22,252 |
+| **Training Split** | 15,576 (70%) |
+| **Validation Split** | 4,450 (20%) |
+| **Test Split** | 2,226 (10%) |
 | **Image Format** | PNG (512×512) |
-| **Annotation Coverage** | Comprehensive |
+| **Annotation Coverage** | 16,508 annotations |
 | **Processing Status** | ✅ Complete |
 
 ### **Source Datasets**
-- **PhenoBench**: 67,074 images (plant phenotyping)
-- **Capsicum Annuum**: 10,550 images (pepper plants)
-- **Vineyard**: 382 images (vineyard canopy)
+- **PhenoBench**: 2,872 images (plant phenotyping, 50% of 5,744 original)
+- **Weed Augmented**: 7,872 images (weed detection, 50% of 15,744 original)
+- **TinyDataset**: 191 images (small-scale agriculture, 50% of 382 original)
+- **Vineyard Canopy**: 191 images (vineyard analysis, 50% of 382 original)
+- **Capsicum Annuum**: 0 images (processing incomplete)
+
+> **Note**: The 50% processing rate reflects quality control measures that filtered out corrupted, duplicate, or incompatible images during the combination process. This ensures the highest quality dataset for WSSS training.
 
 ## 🏗️ **Project Structure**
 
