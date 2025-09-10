@@ -1,0 +1,140 @@
+{
+  "dataset_path": "sample_segmentation_project/demo_dataset",
+  "testing_date": "2025-09-10T10:09:02.155582",
+  "models_tested": {
+    "AdvancedUNet": {
+      "quick_test": {
+        "config": {
+          "epochs": 3,
+          "batch_size": 2,
+          "subset_size": 10,
+          "description": "Quick test with minimal data",
+          "loss": "combined"
+        },
+        "training_time": 4.640007734298706,
+        "history": {
+          "train_loss": [
+            0.7899630864461263,
+            0.7140555580457052,
+            0.6462143659591675
+          ],
+          "val_loss": [
+            0.7970812320709229,
+            0.7713184952735901,
+            0.7122539281845093
+          ],
+          "train_dice": [
+            0.001584343963865346,
+            0.6904761915405592,
+            1.0
+          ],
+          "val_dice": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "epochs": [
+            1,
+            2,
+            3
+          ]
+        },
+        "metrics": {
+          "dice_score": 1.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "mean_dice_per_batch": [
+            1.0
+          ]
+        },
+        "status": "success"
+      },
+      "standard_test": {
+        "config": {
+          "epochs": 8,
+          "batch_size": 4,
+          "subset_size": 20,
+          "description": "Standard test with moderate data",
+          "loss": "combined"
+        },
+        "training_time": 11.182498216629028,
+        "history": {
+          "train_loss": [
+            0.7596410810947418,
+            0.7119899392127991,
+            0.6707667410373688,
+            0.632348895072937,
+            0.5956425666809082,
+            0.5658867657184601,
+            0.5471116602420807,
+            0.5347822606563568
+          ],
+          "val_loss": [
+            0.8292405605316162,
+            0.8111169338226318,
+            0.7884793877601624,
+            0.7599251866340637,
+            0.7052515745162964,
+            0.6154184341430664,
+            0.5415351390838623,
+            0.5144109725952148
+          ],
+          "train_dice": [
+            0.001942211703862995,
+            0.5500000007450581,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "val_dice": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "epochs": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "metrics": {
+          "dice_score": 1.0,
+          "accuracy": 1.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0,
+          "mean_dice_per_batch": [
+            1.0
+          ]
+        },
+        "status": "success"
+      }
+    },
+    "FCN": {
+      "quick_test": {
+        "status": "failed",
+        "error": "The size of tensor a (131072) must match the size of tensor b (32768) at non-singleton dimension 0"
+      },
+      "standard_test": {
+        "status": "failed",
+        "error": "The size of tensor a (262144) must match the size of tensor b (65536) at non-singleton dimension 0"
+      }
+    }
+  },
+  "overall_summary": {}
+}

@@ -1,0 +1,114 @@
+{
+  "analyses": {
+    "moltean_fruits": {
+      "name": "Fruits (Moltean)",
+      "path": "fruit_datasets_download/moltean_fruits",
+      "compatible": true,
+      "issues": [],
+      "recommendations": [
+        "Download dataset from Kaggle",
+        "Convert classification labels to segmentation masks",
+        "Integrate with existing agricultural dataset"
+      ],
+      "integration_method": "classification_to_segmentation",
+      "image_count": 0,
+      "class_count": 0,
+      "classes": [],
+      "estimated_images": 1000,
+      "estimated_classes": 10
+    },
+    "shimul_fruits": {
+      "name": "Fruits Dataset (Shimul)",
+      "path": "fruit_datasets_download/shimul_fruits",
+      "compatible": true,
+      "issues": [],
+      "recommendations": [
+        "Download dataset from Kaggle",
+        "Convert classification labels to segmentation masks",
+        "Integrate with existing agricultural dataset"
+      ],
+      "integration_method": "classification_to_segmentation",
+      "image_count": 0,
+      "class_count": 0,
+      "classes": [],
+      "estimated_images": 1500,
+      "estimated_classes": 15
+    },
+    "mango_classify": {
+      "name": "Mango Classify (12 Native Mango)",
+      "path": "fruit_datasets_download/mango_classify",
+      "compatible": true,
+      "issues": [],
+      "recommendations": [
+        "Download dataset from Kaggle",
+        "Convert classification labels to segmentation masks",
+        "Integrate with existing agricultural dataset"
+      ],
+      "integration_method": "classification_to_segmentation",
+      "image_count": 0,
+      "class_count": 0,
+      "classes": [],
+      "estimated_images": 500,
+      "estimated_classes": 12
+    }
+  },
+  "plan": {
+    "total_datasets": 3,
+    "compatible_datasets": [
+      "moltean_fruits",
+      "shimul_fruits",
+      "mango_classify"
+    ],
+    "incompatible_datasets": [],
+    "integration_steps": [
+      {
+        "dataset": "moltean_fruits",
+        "step": "download_and_extract",
+        "description": "Download Fruits (Moltean) from Kaggle"
+      },
+      {
+        "dataset": "moltean_fruits",
+        "step": "convert_to_segmentation",
+        "description": "Convert classification labels to segmentation masks"
+      },
+      {
+        "dataset": "moltean_fruits",
+        "step": "integrate_with_existing",
+        "description": "Integrate with existing agricultural dataset"
+      },
+      {
+        "dataset": "shimul_fruits",
+        "step": "download_and_extract",
+        "description": "Download Fruits Dataset (Shimul) from Kaggle"
+      },
+      {
+        "dataset": "shimul_fruits",
+        "step": "convert_to_segmentation",
+        "description": "Convert classification labels to segmentation masks"
+      },
+      {
+        "dataset": "shimul_fruits",
+        "step": "integrate_with_existing",
+        "description": "Integrate with existing agricultural dataset"
+      },
+      {
+        "dataset": "mango_classify",
+        "step": "download_and_extract",
+        "description": "Download Mango Classify (12 Native Mango) from Kaggle"
+      },
+      {
+        "dataset": "mango_classify",
+        "step": "convert_to_segmentation",
+        "description": "Convert classification labels to segmentation masks"
+      },
+      {
+        "dataset": "mango_classify",
+        "step": "integrate_with_existing",
+        "description": "Integrate with existing agricultural dataset"
+      }
+    ],
+    "estimated_images": 0,
+    "estimated_classes": 0
+  },
+  "timestamp": "2025-09-10T09:33:49.575138"
+}
