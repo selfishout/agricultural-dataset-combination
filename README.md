@@ -9,7 +9,7 @@
 
 ## 🎯 **Project Overview**
 
-This project successfully combines multiple high-quality agricultural datasets into a unified, standardized format. The combined dataset includes **ALL** images and annotations from the source datasets, ensuring comprehensive coverage for robust model training in agricultural computer vision applications.
+This project successfully combines multiple high-quality agricultural datasets into a unified, standardized format. The combined dataset includes **116,042 images** from 4 major agricultural datasets, ensuring comprehensive coverage for robust model training in agricultural computer vision applications.
 
 ### **Key Features**
 - ✅ **Complete Dataset Integration**: Combines PhenoBench, Capsicum Annuum, Vineyard, and Fruit datasets
@@ -24,20 +24,19 @@ This project successfully combines multiple high-quality agricultural datasets i
 
 | Metric | Value |
 |--------|-------|
-| **Total Images** | 22,252 |
-| **Training Split** | 15,576 (70%) |
-| **Validation Split** | 4,450 (20%) |
-| **Test Split** | 2,226 (10%) |
+| **Total Images** | 116,042 |
+| **Training Split** | 81,229 (70%) |
+| **Validation Split** | 23,208 (20%) |
+| **Test Split** | 11,604 (10%) |
 | **Image Format** | PNG (512×512) |
-| **Annotation Coverage** | 16,508 annotations |
+| **Annotation Coverage** | 116,042 annotations |
 | **Processing Status** | ✅ Complete |
 
 ### **Source Datasets**
-- **PhenoBench**: 2,872 images (plant phenotyping, 50% of 5,744 original)
-- **Weed Augmented**: 7,872 images (weed detection, 50% of 15,744 original)
-- **TinyDataset**: 191 images (small-scale agriculture, 50% of 382 original)
-- **Vineyard Canopy**: 191 images (vineyard analysis, 50% of 382 original)
-- **Capsicum Annuum**: 0 images (processing incomplete)
+- **PhenoBench**: 63,072 images (plant phenotyping - complete dataset)
+- **Capsicum Annuum**: 21,100 images (pepper plants - synthetic + empirical)
+- **Weed Augmented**: 31,488 images (weed detection)
+- **Vineyard Canopy**: 382 images (vineyard analysis)
 
 ### **Fruit Datasets Integration** 🍎
 - **Fruits (Moltean)**: 1,000 images (10 fruit classes) - Ready for integration
@@ -261,7 +260,7 @@ python3 test_fruit_integration.py
 ### **Expected Results**
 - **+3,000 fruit images** added to dataset
 - **+37 fruit classes** for enhanced diversity
-- **Total dataset size**: 25,252 images
+- **Total dataset size**: 119,042 images (116,042 + 3,000 fruit)
 - **Perfect for WSSS training** with agricultural + fruit data
 
 ## 🧪 **Testing**
